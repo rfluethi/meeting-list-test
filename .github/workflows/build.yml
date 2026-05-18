@@ -1,0 +1,42 @@
+name: JSON täglich aktualisieren
+
+on:
+  schedule:
+    - cron: '15 4 * * *'    # täglich um 04:15 UTC (06:15 MESZ / 05:15 MEZ)
+  push:
+    branches: [main]
+    paths:
+      - 'sitzungen.md'
+      - 'build_json.py'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:          # manueller Trigger
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: JSON erzeugen
+        run: python build_json.py
+
+      - name: Änderungen committen (falls vorhanden)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitzungen.json
+          if git diff --staged --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Sitzungen-JSON aktualisiert"
+            git push
+          fi
