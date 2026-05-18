@@ -1,0 +1,42 @@
+{
+  "aktualisiert": "2026-05-18T15:53:46Z",
+  "anzahl": 4,
+  "sitzungen": [
+    {
+      "datum": "2026-06-03",
+      "datum_formatiert": "03.06.2026",
+      "uhrzeit": "18:00",
+      "titel": "Einführung in WordPress",
+      "ort": "Online (Zoom)",
+      "beschreibung": "Grundlagen für Einsteiger",
+      "teilnehmer": "offen"
+    },
+    {
+      "datum": "2026-06-17",
+      "datum_formatiert": "17.06.2026",
+      "uhrzeit": "18:00",
+      "titel": "Plugin-Entwicklung",
+      "ort": "Online (Zoom)",
+      "beschreibung": "Eigene Plugins erstellen",
+      "teilnehmer": "offen"
+    },
+    {
+      "datum": "2026-07-01",
+      "datum_formatiert": "01.07.2026",
+      "uhrzeit": "18:00",
+      "titel": "Theme-Anpassungen",
+      "ort": "Zürich, Hub 5",
+      "beschreibung": "Child-Themes und Customizer",
+      "teilnehmer": "max. 20"
+    },
+    {
+      "datum": "2026-07-15",
+      "datum_formatiert": "15.07.2026",
+      "uhrzeit": "18:00",
+      "titel": "Performance-Optimierung",
+      "ort": "Online (Zoom)",
+      "beschreibung": "Caching, Bilder, Datenbank",
+      "teilnehmer": "offen"
+    }
+  ]
+}
